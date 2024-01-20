@@ -2,6 +2,8 @@ ARG ARCH=
 
 FROM ${ARCH}alpine:latest as builder
 
+## Change Repo
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 
 RUN apk update && apk add make gcc git libc-dev openssh-client
 
@@ -15,7 +17,7 @@ FROM ${ARCH}alpine:latest
 COPY --from=builder /usr/local/bin/udpxy /usr/local/bin/udpxy
 COPY --from=builder /usr/local/bin/udpxrec /usr/local/bin/udpxrec
 
-EXPOSE 4000/tcp
+EXPOSE 4022/tcp
 
 ENTRYPOINT ["/usr/local/bin/udpxy"]
 CMD ["-v", "-T", "-p", "4022"]
