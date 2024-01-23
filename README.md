@@ -8,7 +8,7 @@ sudo docker stop udpxy
 sudo docker rm udpxy
 sudo docker run --name udpxy \
  --network host \
- --restart always \
+ --restart unless-stopped \
  -d mslovecc/udpxy:latest \
  -T -S -p 4022 -m enp1s0 -c 5 -B 256kb
 ```
