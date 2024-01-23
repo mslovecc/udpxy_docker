@@ -12,3 +12,4 @@ sudo docker run --name udpxy \
  -d mslovecc/udpxy:latest \
  -T -S -p 4022 -m enp1s0 -c 5 -B 256kb
 ```
+Please Change `enp1s0` to your local iface name.
