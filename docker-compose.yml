@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  udpxy:
+    image: mslovecc/udpxy:latest
+    command: '-S -T -p 4022 -m enp1s0 -c 5 -B 256kb'
+    name: udpxy
+    network_mode: host
+    restart: unless-stopped
