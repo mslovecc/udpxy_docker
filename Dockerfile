@@ -20,4 +20,4 @@ COPY --from=builder /usr/local/bin/udpxrec /usr/local/bin/udpxrec
 EXPOSE 4022/tcp
 
 ENTRYPOINT ["/usr/local/bin/udpxy"]
-CMD ["-v", "-T", "-S", "-p", "4022"]
+CMD ["-T", "-S", "-p", "4022"]
