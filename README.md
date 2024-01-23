@@ -10,5 +10,5 @@ sudo docker run --name udpxy \
  --network host \
  --restart always \
  -d mslovecc/udpxy:latest \
- -v -T -S -p 4022 -m enp1s0 -c 5 -B 256kb
+ -T -S -p 4022 -m enp1s0 -c 5 -B 256kb
 ```
